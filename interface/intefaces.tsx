@@ -12,5 +12,3 @@ export interface currency {
   volumeUsd24Hr: string;
   vwap24Hr: string;
 }
-
-export interface coinDetail {}
