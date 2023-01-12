@@ -1,15 +1,5 @@
-* {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  text-decoration: none;
-}
-
-a {
-  text-decoration: none;
-}
-
-a:link,
-a:visited {
-  color: rgb(0, 0, 0);
-}
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap");
+@import "./normalize.scss";
+@import "./pages/displayCurrencyPage.scss";
+@import "./pages/assetPage.scss";
+@import "./components/displayName.scss";

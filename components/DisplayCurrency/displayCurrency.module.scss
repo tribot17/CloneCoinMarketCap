@@ -1,6 +1,16 @@
 .displayCurrency {
   display: grid;
-  grid-template-columns: 14.28% 14.28% 14.28% 14.28% 14.28% 14.28% 14.28%;
-  margin: 10px;
+  grid-template-columns: 16.66% 16.66% 16.66% 16.66% 16.66% 16.66%;
   justify-content: space-between;
+  margin-top: 15px;
+  align-items: center;
+  background-color: rgba(72, 72, 72, 0.512);
+  box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.12);
+  padding: 20px;
+  border-radius: 25px;
+  transition: 0.5s ease;
+
+  &:hover {
+    background-color: rgba(112, 112, 112, 0.512);
+  }
 }

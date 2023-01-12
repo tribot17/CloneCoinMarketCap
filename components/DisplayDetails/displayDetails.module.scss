@@ -1,0 +1,154 @@
+.displayDetails_page {
+  display: flex;
+  width: 80%;
+  height: 100vh;
+  flex-direction: column;
+  margin: auto;
+
+  .displayDetails_header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    // margin: 15px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+
+  .container1,
+  .container2 {
+    padding: 20px;
+    width: 45%;
+    height: 327px;
+    border-radius: 25px;
+    background-color: rgb(255, 255, 255, 14%);
+  }
+
+  .container1 {
+    .container_header {
+      width: 40%;
+      display: flex;
+      align-items: center;
+      border: 1px solid rgba(0, 0, 0, 0.455);
+      border-radius: 15px;
+      padding: 25px;
+
+      .container_header_text {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        margin-left: 15px;
+
+        .name_symbol {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          gap: 5px;
+
+          #symbol {
+            background-color: rgba(255, 255, 255, 0.182);
+            padding: 2px;
+            border-radius: 5px;
+          }
+        }
+      }
+    }
+
+    #rank {
+      width: fit-content;
+      padding: 5px;
+      border-radius: 5px;
+      background-color: rgba(91, 91, 91, 0.768);
+    }
+  }
+
+  .container2 {
+    display: flex;
+    flex-direction: column;
+    .price_display {
+      display: flex;
+      flex-direction: column;
+      .price_purcentage {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 15px;
+
+        #price_purcentage {
+          padding: 7px;
+          border-radius: 15px;
+        }
+      }
+
+      .low_high {
+        display: flex;
+        gap: 15px;
+      }
+    }
+
+    .token_details_display {
+      display: grid;
+      grid-template-columns: 33% 33% 33%;
+      height: 50%;
+      margin-top: 15%;
+      justify-content: center;
+      text-align: center;
+      .market_cap,
+      .volumes {
+        position: relative;
+      }
+
+      .market_cap::after,
+      .volumes::after {
+        content: "";
+        position: absolute;
+        right: 0;
+        top: 10%;
+        height: 80%;
+        width: 1px;
+        background-color: rgb(255, 255, 255);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .displayDetails_page {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .displayDetails_page {
+    .container2 {
+      .token_details_display {
+        display: none;
+        display: grid;
+        grid-template-columns: none;
+        grid-template-rows: 33% 33% 33%;
+
+        .actual_supply {
+          margin-top: 15px;
+        }
+
+        .volumes {
+          margin-top: 15px;
+          padding-bottom: 15px;
+        }
+
+        .market_cap::after,
+        .volumes::after {
+          content: "";
+          position: absolute;
+          width: 80%;
+          height: 1px;
+          top: 100%;
+          right: 50%;
+          transform: translate(50%, 0%);
+          background-color: rgb(255, 255, 255);
+          margin-bottom: 15px;
+        }
+      }
+    }
+  }
+}

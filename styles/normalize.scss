@@ -1,0 +1,27 @@
+* {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  font-family: "Inter", sans-serif;
+}
+.page {
+  // background: linear-gradient(to top, #0f2027, #203a43, #2c5364);
+  // background: linear-gradient(to top, #000000, #434343);
+  // background: linear-gradient(
+  //   180deg,
+  //   rgba(20, 33, 43, 0.961) 0%,
+  //   rgb(13, 19, 30) 100%
+  // );
+  background: linear-gradient(to top, #151515, #1f1f1f);
+  color: white;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:link,
+a:visited {
+  color: white;
+}
