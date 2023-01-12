@@ -3,10 +3,11 @@ import "../styles/index.scss";
 
 function MyApp({ Component, pageProps }: any) {
   return (
-    <>
+    <div className="page">
       <Navbar />
+      <div className="trait"></div>
       <Component {...pageProps} />
-    </>
+    </div>
   );
 }
 
