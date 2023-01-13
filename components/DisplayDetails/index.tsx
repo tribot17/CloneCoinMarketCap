@@ -3,6 +3,7 @@ import Link from "next/link";
 import React, { useState } from "react";
 import { currency } from "../../interface/intefaces";
 import { numberWithSpaces } from "../../utils/defaultCurrency";
+import ProgressBar from "../ProgressBar";
 import classes from "./displayDetails.module.scss";
 
 interface IDisplayDetails {
@@ -14,7 +15,6 @@ const DisplayDetails: React.FC<IDisplayDetails> = ({ assetData }) => {
     links: false,
     marketData: false,
   });
-  console.log(assetData);
 
   const DisplayChainExplorer = () => {
     return assetData.links.blockchain_site
@@ -82,6 +82,11 @@ const DisplayDetails: React.FC<IDisplayDetails> = ({ assetData }) => {
             </div>
             <div className={classes.low_high}>
               <p>${assetData.market_data.low_24h.usd}</p>
+              <ProgressBar
+                min={assetData.market_data.low_24h.usd}
+                max={assetData.market_data.high_24h.usd}
+                currentValue={assetData.market_data.current_price.usd}
+              />
               <p>${assetData.market_data.high_24h.usd}</p>
             </div>
           </div>
