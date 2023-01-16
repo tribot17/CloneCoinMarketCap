@@ -25,6 +25,8 @@
   }
 
   .container1 {
+    display: flex;
+    flex-direction: column;
     .container_header {
       width: 40%;
       display: flex;
@@ -52,6 +54,42 @@
           }
         }
       }
+    }
+
+    .container_inner {
+      display: flex;
+      align-items: center;
+      #chain_explorer {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 5px;
+        margin: 15px;
+        padding: 7px;
+        border-radius: 10px;
+        background-color: rgba(170, 170, 170, 0.6);
+
+        img {
+          margin-top: 3px;
+        }
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+      #site_link {
+        margin: 15px;
+        padding: 7px;
+        border-radius: 10px;
+        background-color: rgba(170, 170, 170, 0.6);
+      }
+    }
+
+    .display_explorers {
+      transition: 1s;
+      padding: 5px;
+      background-color: rgba(128, 255, 0, 0.475);
+      border-radius: 15px;
     }
 
     #rank {
@@ -84,7 +122,7 @@
         display: flex;
         width: 40%;
         align-items: center;
-        gap: 15px;
+        gap: 10px;
       }
     }
 

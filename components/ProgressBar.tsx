@@ -17,13 +17,15 @@ const ProgressBar: React.FC<progressBar> = ({ min, max, currentValue }) => {
         backgroundColor: "grey",
         width: "100%",
         height: "10px",
+        borderRadius: "15px",
       }}
     >
       <div
         style={{
           width: `${((currentValue - min) / (max - min)) * 100}%`,
           height: "10px",
-          backgroundColor: "blue",
+          backgroundColor: "#adc3c7",
+          borderRadius: "15px",
         }}
       />
     </div>

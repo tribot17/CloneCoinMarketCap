@@ -17,11 +17,15 @@ const DisplayDetails: React.FC<IDisplayDetails> = ({ assetData }) => {
   });
 
   const DisplayChainExplorer = () => {
-    return assetData.links.blockchain_site
-      .filter((n: string) => n.length > 0)
-      .map((blocksite: string, index: number) => (
-        <p key={index}>{blocksite}</p>
-      ));
+    return (
+      <div className={classes.display_explorers}>
+        {assetData.links.blockchain_site
+          .filter((n: string) => n.length > 0)
+          .map((blocksite: string, index: number) => (
+            <p key={index}>{blocksite}</p>
+          ))}
+      </div>
+    );
   };
 
   return (
@@ -43,22 +47,38 @@ const DisplayDetails: React.FC<IDisplayDetails> = ({ assetData }) => {
               <p id={classes.rank}>Rank {assetData.market_cap_rank}</p>
             </div>
           </div>
-
-          <h3>
-            <Link href={assetData.links.homepage[0]} target="_blank">
+          <div className={classes.container_inner}>
+            <Link
+              href={assetData.links.homepage[0]}
+              target="_blank"
+              id={classes.site_link}
+            >
               {assetData.links.homepage[0]}
             </Link>
-          </h3>
-          <button
-            onClick={() =>
-              setDisplayButton({
-                ...displayButton,
-                links: !displayButton.links,
-              })
-            }
-          >
-            Chain Explorer
-          </button>
+            <div
+              id={classes.chain_explorer}
+              onMouseEnter={() =>
+                setDisplayButton({
+                  ...displayButton,
+                  links: true,
+                })
+              }
+              onMouseLeave={() =>
+                setDisplayButton({
+                  ...displayButton,
+                  links: false,
+                })
+              }
+            >
+              Chains Explorers{" "}
+              <Image
+                src={"/images/down-arrow.png"}
+                alt="arrow_down"
+                width={12}
+                height={12}
+              />
+            </div>
+          </div>
 
           {displayButton.links && <DisplayChainExplorer />}
         </div>
